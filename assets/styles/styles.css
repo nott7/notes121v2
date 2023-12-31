@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap");
+
+html,
+body,
+.website_container {
+  height: 100vh;
+}
+
+body {
+  background: #faf9f9;
+  color: #f9f9f9;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.website_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.website_container.menu_open {
+  height: 100vh;
+  overflow: hidden;
+}
+
+header img,
+footer img {
+  width: 120px;
+}
+
+header,
+footer {
+  width: 100%;
+  padding: 1rem;
+}
+
+header {
+  background:
+    #095ac891;
+}
+
+footer {
+  background-color: #282929;;
+}
+
+.header_content img,
+.footer_content img {
+  transition: transform 0.2s ease-in-out;
+}
+
+.header_content img:hover,
+.footer_content img:hover {
+  transform: scale(1.08);
+}
+
+.header_content,
+.footer_content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_mobile {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav li a {
+  line-height: 1;
+  font-weight: 500;
+  z-index: 1;
+  font-size: 20px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #8379b3, #8379b3 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav li a::before {
+  display: block;
+  content: "";
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  bottom: -3px;
+  z-index: 0;
+  position: absolute;
+  background: #8379b3;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav li a:hover {
+  background-position: 0%;
+}
+
+.nav li:hover a::before {
+  width: 100%;
+}
+
+.navbar_mobile {
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: 300ms height ease-in-out;
+}
+
+.open {
+  height: 100vh;
+}
+
+.navbar_mobile>ul {
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0.8;
+  align-items: start;
+}
+
+.navbar_mobile>ul>li {
+  text-align: center;
+}
+
+
+
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+/* HAMBURGER MENU */
+
+/* GENERAL STYLES */
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hamburger {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.hamburger .bar {
+  padding: 0;
+  width: 30px;
+  height: 4px;
+  background-color: #f9f9f9;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: 13.5px;
+}
+
+.bar3 {
+  right: 0;
+}
+
+.bar4 {
+  bottom: 0;
+}
+
+.hamburger3 .bar1 {
+  transform-origin: 5%;
+}
+
+.hamburger3 .bar4 {
+  transform-origin: 5%;
+}
+
+.checkbox3:checked+label>.hamburger3>.bar1 {
+  transform: rotate(45deg);
+  height: 3px;
+  width: 42px;
+}
+
+.checkbox3:checked+label>.hamburger3>.bar3 {
+  transform: rotate(45deg);
+  height: 3px;
+  background-color: transparent;
+}
+
+.checkbox3:checked+label>.hamburger3>.bar2 {
+  transform: rotate(-45deg);
+  height: 3px;
+  background-color: transparent;
+}
+
+.checkbox3:checked+label>.hamburger3>.bar4 {
+  transform: rotate(-45deg);
+  height: 3px;
+  width: 42px;
+}
+
+
+@media only screen and (max-width: 1600px) {
+
+  header img,
+  footer img {
+    width: 80px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  main {
+    padding: 6rem 0;
+  }
+
+
+  main img {
+    max-width: 80vw;
+  }
+
+  header img,
+  footer img {
+    width: 60px;
+  }
+
+  .website_container {
+    height: 100%;
+  }
+
+
+  .header_content ul {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .footer_content .nav {
+    margin-top: 2rem;
+  }
+
+  .footer_content,
+  .footer_content .nav {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+
+  .footer_content>div {
+    width: 100%;
+  }
+
+
+  .header_mobile {
+    display: block;
+  }
+
+  .header_content .nav {
+    display: none;
+  }
+}
